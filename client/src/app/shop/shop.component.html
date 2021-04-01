@@ -1,0 +1,136 @@
+
+<div class="listing-area pt-50 pb-50">
+  <div class="container">
+     <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6">
+           <div class="category-listing mb-50">
+              <div class="single-listing">
+                 <div class="select-Categories pb-30">
+                    <div class="small-tittle mb-20">
+                       <h4>Filter by Genres</h4>
+                    </div>
+                    <div *ngFor="let type of types">
+                    <label class="container">{{type.name}}
+                    <input type="checkbox" [checked]="type.id === shopParams.typeId" (click)="onTypeSelected(type.id)">
+                    <span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                 </div>
+                 <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow mb-40">
+                    <div class="small-tittle">
+                       <h4>Filter by Price</h4>
+                    </div>
+                    <div class="widgets_inner">
+                       <div class="range_item">
+                          <input type="text" class="js-range-slider" value="" />
+                          <div class="d-flex align-items-center">
+                             <div class="price_value d-flex justify-content-center">
+                                <input (change)="eventValue($event.target.value) "type="text" class="js-input-from" id="amount" readonly />
+                                <span>to</span>
+                                <input type="text" class="js-input-to" id="amount1" readonly />
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </aside>
+                 <div class="select-job-items2 mb-30">
+                    <div class="col-xl-12">
+                       <select name="select2">
+                          <option value="">Filter by Rating</option>
+                          <option value="">5 Star Rating</option>
+                          <option value="">4 Star Rating</option>
+                          <option value="">3 Star Rating</option>
+                          <option value="">2 Star Rating</option>
+                          <option value="">1 Star Rating</option>
+                       </select>
+                    </div>
+                 </div>
+                 <div class="select-Categories pt-100 pb-60">
+                    <div class="small-tittle mb-20">
+                       <h4>Filter by Publisher</h4>
+                    </div>
+
+                      <label class="container" *ngFor="let brand of brands">{{brand.name}}
+                      <input type="checkbox" [checked]="brand.id === shopParams.brandId" (click)="onBrandSelected(brand.id)">
+                      <span class="checkmark"></span>
+                      </label>
+
+
+
+                 </div>
+                 <div class="select-Categories">
+                    <div class="small-tittle mb-20">
+                       <h4>Filter by Author Name</h4>
+                    </div>
+                    <label class="container">Buster Hyman
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Phil Harmonic
+                    <input type="checkbox" checked="checked active">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Cam L. Toe
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Otto Matic
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Juan Annatoo
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    </label>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="col-xl-8 col-lg-8 col-md-6">
+           <div class="row justify-content-between">
+             <div class="col-xl-4 my-auto">
+            <app-paging-header [totalCount]='totalCount' [pageSize]="shopParams.pageSize" [pageNumber]="shopParams.pageNumber"></app-paging-header>
+          </div>
+              <div class="col-xl-4  ">
+
+                 <div class="product_page_tittle">
+                    <div class="short_by">
+                       <select class="form-select mb-20" style="border-radius:30px" name="#" id="product_short_list" (change)="onSortSelected($event.target.value)">
+                          <option *ngFor="let sort of sortOptions" [value]="sort.value">{{sort.name}}</option>
+
+                       </select>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="best-selling p-0">
+              <div class="row">
+
+
+                  <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-12 col-sm-6" *ngFor="let product of products | paginate: {
+                  itemsPerPage: shopParams.pageSize,
+                  currentPage: shopParams.pageNumber,
+                  totalItems: totalCount }">
+                      <app-product-item [product]="product"></app-product-item>
+                  </div>
+
+
+
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-xl-12">
+
+                 <pagination-controls
+                      (pageChange)="onPageChanged($event)"
+                      previousLabel="Prev"
+                      nextLabel="Next"
+                      responsive="true"
+></pagination-controls>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
