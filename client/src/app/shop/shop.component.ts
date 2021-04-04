@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
 import { IType } from '../shared/models/productType';
@@ -24,11 +25,14 @@ export class ShopComponent implements OnInit {
     {name: 'Price: High to low', value: 'priceDesc'},
   ]
 
-  constructor(private shopService: ShopService,private searchBarService: SearchBarService) {
-    this.searchBarService.getProductsFn = this.getProducts();
-  }
+  constructor(private shopService: ShopService,private route: ActivatedRoute) {
+
+  };
 
   ngOnInit(): void {
+
+    this.shopParams.search = this.route.snapshot.queryParams.search;
+
     this.getProducts();
     this.getBrands();
     this.getTypes();
@@ -36,7 +40,8 @@ export class ShopComponent implements OnInit {
 
   getProducts(){
 
-    this.shopService.getProducts(this.shopParams).subscribe( response =>{
+
+     this.shopService.getProducts(this.shopParams).subscribe( response =>{
       this.products = response.data;
       this.shopParams.pageNumber = response.pageIndex;
       this.shopParams.pageSize = response.pageSize;

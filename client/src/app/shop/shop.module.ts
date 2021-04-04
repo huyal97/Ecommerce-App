@@ -5,17 +5,20 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SharedModule } from '../shared/shared.module';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { RouterModule } from '@angular/router';
 
 
 
 
 @NgModule({
-  declarations: [ShopComponent, ProductItemComponent],
+  declarations: [ShopComponent, ProductItemComponent, ProductDetailComponent],
   imports: [
     CommonModule,
     FormsModule,
     NgxPaginationModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
   ],
   exports: [ShopComponent, ProductItemComponent]
 })

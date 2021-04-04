@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {ShopModule} from './shop/shop.module';
 import {CoreModule} from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {CoreModule} from './core/core.module';
     ShopModule,
     HttpClientModule,
     CoreModule,
-    
+    AppRoutingModule
+
 
   ],
   providers: [],

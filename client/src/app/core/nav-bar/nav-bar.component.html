@@ -9,11 +9,11 @@
   <div class="header-info-left d-flex align-items-center">
 
   <div class="logo">
-  <a href="index-2.html"><img src="assets/img/logo/logo.png" alt=""></a>
+  <a><img src="assets/img/logo/logo.png" alt=""></a>
   </div>
 
   <form action="#" class="form-box">
-  <input (keyup.enter)="onSearch()"  #search type="text" name="Search" placeholder="Search book by author or publisher">
+  <input (keyup.enter)="onSearch($event.target.value)"   type="text" name="Search" placeholder="Search book by author or publisher">
   <div class="search-icon">
   <i class="ti-search"></i>
   </div>
