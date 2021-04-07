@@ -7,6 +7,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
+import { BasketModule } from '../basket/basket.module';
 
 
 
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     NgxPaginationModule,
     SharedModule,
     RouterModule,
+    BasketModule
   ],
   exports: [ShopComponent, ProductItemComponent]
 })

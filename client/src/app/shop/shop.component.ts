@@ -31,7 +31,10 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.shopParams.search = this.route.snapshot.queryParams.search;
+    this.route.queryParams.subscribe(queryparams =>{
+      this.shopParams.search = queryparams['search'];
+      this.getProducts();
+    });
 
     this.getProducts();
     this.getBrands();

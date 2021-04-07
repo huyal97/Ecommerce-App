@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BasketService } from 'src/app/basket/basket.service';
 import { IProduct } from 'src/app/shared/models/product';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ShopService } from '../shop.service';
@@ -12,13 +13,20 @@ import { ShopService } from '../shop.service';
 export class ProductDetailComponent implements OnInit {
 
   product : IProduct;
-  constructor(private shopService : ShopService,private activatedRoute : ActivatedRoute) { }
+  constructor(private shopService : ShopService,private activatedRoute : ActivatedRoute,private basketService: BasketService) { }
 
   ngOnInit(): void {
       this.loadProduct()
 
 
   }
+
+
+  addItemToBasket() {
+    this.basketService.addItemToBasket(this.product);
+  }
+
+
 
   loadProduct(){
     this.shopService.getProduct(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe(product =>{
