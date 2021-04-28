@@ -2,6 +2,7 @@ using API.Extensions;
 using API.Helpers;
 using API.Middleware;
 using Infrastructure;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,9 +40,13 @@ namespace Ecommerce
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x =>
-                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")
+                ));
+            services.AddDbContext<AppIdentityDbContext>(x =>
+            {
+                x.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            });
 
-            
 
             services.AddSingleton<IConnectionMultiplexer>(c =>
             {
@@ -50,6 +55,7 @@ namespace Ecommerce
             });
 
             services.AddApplicationServices();
+            services.AddIdentityServices(Configuration);
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
             {
@@ -57,6 +63,8 @@ namespace Ecommerce
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200");
                 });
+
+
             });
         }
 
@@ -72,7 +80,7 @@ namespace Ecommerce
             app.UseStaticFiles();
 
             app.UseCors("CorsPolicy");
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSwaggerDocumention();
