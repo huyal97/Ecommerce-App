@@ -34,7 +34,7 @@ namespace Ecommerce
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
+
 
 
             services.AddAutoMapper(typeof(MappingProfiles));
@@ -56,6 +56,7 @@ namespace Ecommerce
 
             services.AddApplicationServices();
             services.AddIdentityServices(Configuration);
+
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
             {
@@ -63,8 +64,6 @@ namespace Ecommerce
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200");
                 });
-
-
             });
         }
 
@@ -80,7 +79,7 @@ namespace Ecommerce
             app.UseStaticFiles();
 
             app.UseCors("CorsPolicy");
-            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseSwaggerDocumention();

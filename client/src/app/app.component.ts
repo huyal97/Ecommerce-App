@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BasketService } from './basket/basket.service';
+import { AccountService} from './account/account.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,14 @@ import { BasketService } from './basket/basket.service';
 export class AppComponent {
   title = 'my-app';
 
-  constructor(private basketService: BasketService) { }
+  constructor(private basketService: BasketService, private accountService: AccountService) { }
 
   ngOnInit(): void {
     const basketId = localStorage.getItem('basket_id');
-    console.log("first");
-    console.log(basketId);
-    console.log("second");
+    this.loadCurrentUser();
+
+
+
 
     if (basketId) {
       this.basketService.getBasket(basketId).subscribe(() => {
@@ -25,4 +27,17 @@ export class AppComponent {
       })
     }
   }
+
+  loadCurrentUser() {
+    const token = localStorage.getItem('token');
+    this.accountService.loadCurrentUser(token).subscribe(() => {
+      console.log('loaded user');
+    }, error => {
+      console.log(error);
+    })
+  }
+
+
+
+
 }
