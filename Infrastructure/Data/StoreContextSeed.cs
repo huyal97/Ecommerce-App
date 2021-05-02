@@ -24,6 +24,7 @@ namespace Infrastructure.Data
 
                     foreach (var item in brands)
                     {
+                        ;
                         context.ProductBrands.Add(item);
                     }
 
