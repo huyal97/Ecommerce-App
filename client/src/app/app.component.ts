@@ -16,9 +16,6 @@ export class AppComponent {
     const basketId = localStorage.getItem('basket_id');
     this.loadCurrentUser();
 
-
-
-
     if (basketId) {
       this.basketService.getBasket(basketId).subscribe(() => {
         console.log('initialised basket');
@@ -34,6 +31,7 @@ export class AppComponent {
       console.log('loaded user');
     }, error => {
       console.log(error);
+      console.log('Cant Load User');
     })
   }
 

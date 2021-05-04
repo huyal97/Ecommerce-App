@@ -7,6 +7,7 @@ import { BasketService } from './basket.service';
   selector: 'app-basket',
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 
 })
 export class BasketComponent implements OnInit {
