@@ -7,20 +7,20 @@ import { BasketService } from './basket.service';
   selector: 'app-basket',
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
+
 
 })
 export class BasketComponent implements OnInit {
 
   basket$: Observable<IBasket>;
-  basketTotal$: Observable<IBasketTotals>;
+  basketTotals$: Observable<IBasketTotals>;
 
   constructor(private basketService: BasketService) { }
 
   ngOnInit(): void {
     this.basket$ = this.basketService.basket$;
-    this.basketTotal$ = this.basketService.basketTotal$;
-    console.log(this.basket$,"fdsf");
+    this.basketTotals$ = this.basketService.basketTotal$;
+    console.log(this.basket$);
   }
 
   removeBasketItem(item: IBasketItem) {

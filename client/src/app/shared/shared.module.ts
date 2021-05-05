@@ -7,6 +7,7 @@ import { BasketSummaryComponent } from './components/basket-summary/basket-summa
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    CdkStepperModule
+    CdkStepperModule,
+    RouterModule
   ],
   exports:[
     PagingHeaderComponent,
