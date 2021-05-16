@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
@@ -10,7 +10,8 @@ import { ShopService } from './shop.service';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.scss']
+  styleUrls: ['./shop.component.scss'],
+
 })
 export class ShopComponent implements OnInit {
   products: IProduct[];
