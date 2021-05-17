@@ -16,10 +16,13 @@ export class BasketSummaryComponent implements OnInit {
   @Input() isBasket = true;
   @Input() items: IBasketItem[] | IOrderItem[] = [];
   @Input() isOrder = false;
+  @Input() subtotal: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.subtotal);
+
 
   }
 

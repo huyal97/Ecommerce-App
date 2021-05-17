@@ -1,21 +1,47 @@
-<div class="d-flex justify-content-center mt-5">
-    <div class="col-3">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="text-center mb-4">
-                <h1 class="h3 mb-3 font-weight-normal">Register</h1>
-            </div>
 
-            <app-text-input formControlName="displayName" [label]="'Display Name'"></app-text-input>
-            <app-text-input formControlName="email" [label]="'Email address'"></app-text-input>
-            <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
-
-            <ul class="text-danger list-unstyled" *ngIf="errors">
+<div class="container">
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-login">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-6">
+            <a routerLink="/account/login"><button class="btn btn-success btn-lg btn-block">Login</button></a>
+          </div>
+          <div class="col-xs-6">
+           <button class="btn btn-success btn-lg btn-block active">Register</button>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <app-text-input formControlName="displayName" [label]="'Display Name'"></app-text-input>
+              <app-text-input formControlName="email" [label]="'Email address'"></app-text-input>
+              <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
+              <ul class="text-danger list-unstyled" *ngIf="errors">
                 <li *ngFor="let error of errors">
                     {{error}}
                 </li>
             </ul>
-
-            <button  class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-        </form>
+              <div class="form-group text-center">
+                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                <label for="remember"> Remember Me</label>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3">
+                    <button  class="btn btn-lg btn-success btn-block" type="submit">Register</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 </div>

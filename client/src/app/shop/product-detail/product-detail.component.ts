@@ -31,6 +31,7 @@ export class ProductDetailComponent implements OnInit {
   loadProduct(){
     this.shopService.getProduct(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe(product =>{
       this.product = product;
+
     }, error => {
       console.log(error)
     })

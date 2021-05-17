@@ -1,40 +1,52 @@
-<aside>
-  <div class="summary">
-    <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
-    <div class="summary-subtotal">
 
-
-      <div class="subtotal-title">Subtotal</div>
-      <div class="subtotal-value final-value" id="basket-subtotal">{{subtotal | currency}}</div>
-
-      <div class="subtotal-title">Shipping</div>
-      <div class="subtotal-value final-value" id="basket-subtotal">{{shippingPrice | currency}}</div>
-
-
-
-      <div class="summary-promo hide">
-        <div class="promo-title">Promotion</div>
-        <div class="promo-value final-value" id="basket-promo"></div>
+<div class="ps-checkout__order">
+  <header>
+    <h3>Your Order</h3>
+  </header>
+  <div class="content">
+    <table class="table ps-checkout__products">
+      <thead>
+        <tr>
+          <th class="text-uppercase">Product</th>
+          <th class="text-uppercase">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Subtotal</td>
+          <td>{{subtotal | currency}}</td>
+        </tr>
+        <tr>
+          <td>Shipping Price</td>
+          <td>{{shippingPrice | currency}}</td>
+        </tr>
+        <tr>
+          <td>Order Total</td>
+          <td>{{total | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <h3>Payment Method</h3>
+    <div class="form-group cheque">
+      <div class="ps-radio">
+        <input class="form-control" type="radio" id="rdo01" name="payment" checked>
+        <label for="rdo01">Cheque Payment</label>
+        <p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
       </div>
     </div>
-    <div class="summary-delivery">
-      <select name="delivery-collection" class="summary-delivery-selection">
-          <option value="0" selected="selected">Select Collection or Delivery</option>
-         <option value="collection">Collection</option>
-         <option value="first-class">Royal Mail 1st Class</option>
-         <option value="second-class">Royal Mail 2nd Class</option>
-         <option value="signed-for">Royal Mail Special Delivery</option>
-      </select>
+    <div class="form-group paypal">
+      <div class="ps-radio ps-radio--inline">
+        <input class="form-control" type="radio" name="payment" id="rdo02">
+        <label for="rdo02">Paypal</label>
+      </div>
+      <ul class="ps-payment-method">
+        <li><a href="#"><img src="assets/images/payment/1.png" alt=""></a></li>
+        <li><a href="#"><img src="assets/images/payment/2.png" alt=""></a></li>
+        <li><a href="#"><img src="assets/images/payment/3.png" alt=""></a></li>
+      </ul>
+      <button class="ps-btn ps-btn--fullwidth">Place Order<i class="ps-icon-next"></i></button>
     </div>
-    <div class="summary-total">
-      <div class="total-title">Total</div>
-      <div class="total-value final-value" id="basket-total">{{total | currency}}</div>
-    </div>
-    <div class="summary-checkout">
-      <a routerLink="/checkout" class="checkout-cta">
-        <button class="checkout-cta">Go to Secure Checkout</button>
-    </a>
-
-    </div>
-  </div>
-</aside>
+  </footer>
+</div>

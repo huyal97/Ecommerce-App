@@ -1,116 +1,176 @@
-<main>
-  <div class="services-area2">
-     <div class="container">
-        <div class="row">
-           <div class="col-xl-12">
-              <div class="row">
-                 <div class="col-xl-12">
-                    <div class="single-services d-flex align-items-center mb-0">
-                       <div class="features-img">
-                          <img src="{{product.pictureUrl}}" alt="">
-                       </div>
-                       <div class="features-caption">
-                          <h3>{{product.name}}</h3>
-                          <p>{{product.description}}</p>
-                          <div class="price">
-                             <span>${{product.price}}</span>
-                          </div>
-                          <!-- <div class="review">
-                             <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                             </div>
-                             <p>(120 Review)</p>
-                          </div> -->
-                          <button (click)="addItemToBasket()" type="button" class="btn btn-primary fa fa-shopping-cart mr-2">Add to Cart</button>
-                          <a href="#" class="border-btn share-btn"><i class="fas fa-share-alt"></i></a>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
+<main class="ps-main">
+  <div class="test">
+    <div class="container">
+      <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+            </div>
+      </div>
+    </div>
   </div>
-  <section class="our-client section-padding best-selling">
-     <div class="container">
-        <div class="row">
-           <div class="offset-xl-1 col-xl-10">
-              <div class="nav-button f-left">
-                 <nav>
-                    <div class="nav nav-tabs " id="nav-tab" role="tablist">
-                       <a class="nav-link active" id="nav-one-tab" data-bs-toggle="tab" href="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">Description</a>
-                       <a class="nav-link" id="nav-two-tab" data-bs-toggle="tab" href="#nav-two" role="tab" aria-controls="nav-two" aria-selected="false">Author</a>
-                       <a class="nav-link" id="nav-three-tab" data-bs-toggle="tab" href="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">Comments</a>
-                       <a class="nav-link" id="nav-four-tab" data-bs-toggle="tab" href="#nav-four" role="tab" aria-controls="nav-four" aria-selected="false">Review</a>
-                    </div>
-                 </nav>
+  <div class="ps-product--detail pt-60" *ngIf="product">
+    <div class="ps-container">
+      <div class="row">
+        <div class="col-lg-10 col-md-12 col-lg-offset-1">
+          <div class="ps-product__thumbnail">
+            <!-- <div class="ps-product__preview">
+              <div class="ps-product__variants">
+                <div class="item"><img src="assets/images/shoe-detail/1.jpg" alt=""></div>
+                <div class="item"><img src="assets/images/shoe-detail/2.jpg" alt=""></div>
+                <div class="item"><img src="assets/images/shoe-detail/3.jpg" alt=""></div>
+                <div class="item"><img src="assets/images/shoe-detail/3.jpg" alt=""></div>
+                <div class="item"><img src="assets/images/shoe-detail/3.jpg" alt=""></div>
+              </div><a class="popup-youtube ps-product__video" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><img src="assets/images/shoe-detail/1.jpg" alt=""><i class="fa fa-play"></i></a>
+            </div> -->
+            <div class="ps-product__image">
+              <div class="item"><img class="zoom" src="{{product.pictureUrl}}" alt="" data-zoom-image="assets/images/shoe-detail/1.jpg"></div>
+
+            </div>
+          </div>
+          <div class="ps-product__thumbnail--mobile">
+            <div class="ps-product__main-img"><img src="{{product.pictureUrl}}" alt=""></div>
+            <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false" data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3" data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"><img src="assets/images/shoe-detail/1.jpg" alt=""><img src="assets/images/shoe-detail/2.jpg" alt=""><img src="assets/images/shoe-detail/3.jpg" alt=""></div>
+          </div>
+          <div class="ps-product__info">
+            <div class="ps-product__rating">
+              <select class="ps-rating">
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+                <option value="2">5</option>
+              </select><a href="#">(Read all 8 reviews)</a>
+            </div>
+            <h1>{{product.name}}</h1>
+            <p class="ps-product__category"><a href="#"> Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
+            <h3 class="ps-product__price">£ 115 <del>£ 330</del></h3>
+            <div class="ps-product__block ps-product__quickview">
+              <h4>QUICK REVIEW</h4>
+              <p>{{product.description}} </p>
+            </div>
+            <div class="ps-product__block ps-product__style">
+              <h4>CHOOSE YOUR STYLE</h4>
+              <ul>
+                <li><a href="product-detail.html"><img src="assets/images/shoe/sidebar/1.jpg" alt=""></a></li>
+                <li><a href="product-detail.html"><img src="assets/images/shoe/sidebar/2.jpg" alt=""></a></li>
+                <li><a href="product-detail.html"><img src="assets/images/shoe/sidebar/3.jpg" alt=""></a></li>
+                <li><a href="product-detail.html"><img src="assets/images/shoe/sidebar/2.jpg" alt=""></a></li>
+              </ul>
+            </div>
+            <div class="ps-product__block ps-product__size">
+              <h4>CHOOSE SIZE<a href="#">Size chart</a></h4>
+              <select class="ps-select selectpicker">
+                <option value="1">Select Size</option>
+                <option value="2">4</option>
+                <option value="3">4.5</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">6.5</option>
+                <option value="3">7</option>
+                <option value="3">7.5</option>
+                <option value="3">8</option>
+                <option value="3">8.5</option>
+                <option value="3">9</option>
+                <option value="3">9.5</option>
+                <option value="3">10</option>
+              </select>
+              <div class="form-group">
+                <input class="form-control" type="number" value="1">
               </div>
-           </div>
+            </div>
+            <div class="ps-product__shopping"><button class="ps-btn mb-10" (click)="addItemToBasket()">Add to cart<i class="ps-icon-next"></i></button>
+              <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="ps-product__content mt-50">
+            <ul class="tab-list" role="tablist">
+              <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab">Overview</a></li>
+              <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab">Review</a></li>
+              <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab">PRODUCT TAG</a></li>
+              <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab">ADDITIONAL</a></li>
+            </ul>
+          </div>
+          <div class="tab-content mb-60">
+            <div class="tab-pane active" role="tabpanel" id="tab_01">
+              <p>Caramels tootsie roll carrot cake sugar plum. Sweet roll jelly bear claw liquorice. Gingerbread lollipop dragée cake. Pie topping jelly-o. Fruitcake dragée candy canes tootsie roll. Pastry jelly-o cupcake. Bonbon brownie soufflé muffin.</p>
+              <p>Sweet roll soufflé oat cake apple pie croissant. Pie gummi bears jujubes cake lemon drops gummi bears croissant macaroon pie. Fruitcake tootsie roll chocolate cake Carrot cake cake bear claw jujubes topping cake apple pie. Jujubes gummi bears soufflé candy canes topping gummi bears cake soufflé cake. Cotton candy soufflé sugar plum pastry sweet roll..</p>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="tab_02">
+              <p class="mb-20">1 review for <strong>Shoes Air Jordan</strong></p>
+              <div class="ps-review">
+                <div class="ps-review__thumbnail"><img src="assets/images/user/1.jpg" alt=""></div>
+                <div class="ps-review__content">
+                  <header>
+                    <select class="ps-rating">
+                      <option value="1">1</option>
+                      <option value="1">2</option>
+                      <option value="1">3</option>
+                      <option value="1">4</option>
+                      <option value="5">5</option>
+                    </select>
+                    <p>By<a href=""> Alena Studio</a> - November 25, 2017</p>
+                  </header>
+                  <p>Soufflé danish gummi bears tart. Pie wafer icing. Gummies jelly beans powder. Chocolate bar pudding macaroon candy canes chocolate apple pie chocolate cake. Sweet caramels sesame snaps halvah bear claw wafer. Sweet roll soufflé muffin topping muffin brownie. Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie.</p>
+                </div>
+              </div>
+              <form class="ps-product__review" action="_action" method="post">
+                <h4>ADD YOUR REVIEW</h4>
+                <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                        <div class="form-group">
+                          <label>Name:<span>*</span></label>
+                          <input class="form-control" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                          <label>Email:<span>*</span></label>
+                          <input class="form-control" type="email" placeholder="">
+                        </div>
+                        <div class="form-group">
+                          <label>Your rating<span></span></label>
+                          <select class="ps-rating">
+                            <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                            <option value="1">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
+                        <div class="form-group">
+                          <label>Your Review:</label>
+                          <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <button class="ps-btn ps-btn--sm">Submit<i class="ps-icon-next"></i></button>
+                        </div>
+                      </div>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="tab_03">
+              <p>Add your tag <span> *</span></p>
+              <form class="ps-product__tags" action="_action" method="post">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="">
+                  <button class="ps-btn ps-btn--sm">Add Tags</button>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="tab_04">
+              <div class="form-group">
+                <textarea class="form-control" rows="6" placeholder="Enter your addition here..."></textarea>
+              </div>
+              <div class="form-group">
+                <button class="ps-btn" type="button">Submit</button>
+              </div>
+            </div>
+          </div>
         </div>
-     </div>
-     <div class="container">
-        <div class="tab-content" id="nav-tabContent">
-           <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
-              <div class="row">
-                 <div class="offset-xl-1 col-lg-9">
-                    <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and</p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.</p>
-                 </div>
-              </div>
-           </div>
-           <div class="tab-pane fade" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
-              <div class="row">
-                 <div class="offset-xl-1 col-lg-9">
-                    <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and</p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.</p>
-                 </div>
-              </div>
-           </div>
-           <div class="tab-pane fade" id="nav-three" role="tabpanel" aria-labelledby="nav-three-tab">
-              <div class="row">
-                 <div class="offset-xl-1 col-lg-9">
-                    <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and</p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.</p>
-                 </div>
-              </div>
-           </div>
-           <div class="tab-pane fade" id="nav-four" role="tabpanel" aria-labelledby="nav-four-tab">
-              <div class="row">
-                 <div class="offset-xl-1 col-lg-9">
-                    <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and</p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.</p>
-                 </div>
-              </div>
-           </div>
-           <div class="tab-pane fade" id="nav-five" role="tabpanel" aria-labelledby="nav-five-tab">
-              <div class="row">
-                 <div class="offset-xl-1 col-lg-9">
-                    <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and</p>
-                    <p>It is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
-  </section>
-  <section class="subscribe-area">
-     <div class="container">
-        <div class="subscribe-caption text-center  subscribe-padding section-img2-bg" data-background="assets/img/gallery/section-bg1.jpg">
-           <div class="row justify-content-center">
-              <div class="col-xl-6 col-lg-8 col-md-9">
-                 <h3>Join Newsletter</h3>
-                 <p>Lorem started its journey with cast iron (CI) products in 1980. The initial main objective was to ensure pure water and affordable irrigation.</p>
-                 <form action="#">
-                    <input type="text" placeholder="Enter your email">
-                    <button class="subscribe-btn">Subscribe</button>
-                 </form>
-              </div>
-           </div>
-        </div>
-     </div>
-  </section>
+      </div>
+    </div>
+  </div>
+
+
+
 </main>
