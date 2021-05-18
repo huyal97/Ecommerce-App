@@ -151,10 +151,10 @@
                 </ul>
           </div>
           <div class="navigation__column right">
-            <form class="ps-search--header" action="do_action" method="post">
-              <input class="form-control" type="text" placeholder="Search Product…">
+            <div class="ps-search--header" >
+              <input (keydown.enter)="onSearch($event.target.value)" class="form-control" type="text" placeholder="Search Product…">
               <button><i class="ps-icon-search"></i></button>
-            </form>
+            </div>
             <div class="ps-cart"><a class="ps-cart__toggle" href="#">
               <span *ngIf="(basket$ | async) as basket"><i>{{basket.items.length}}</i></span>
               <i class="ps-icon-shopping-cart"></i></a>

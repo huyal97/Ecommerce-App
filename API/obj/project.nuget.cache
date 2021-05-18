@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a4g0KBMs2gMaTU+KH/JJdF1SaNN5QXyYsMOggP7Qn1RDZJ6UV8DeKz6dNf0XaJ47drQiv86aeMLxmrvXRH2DCg==",
+  "dgSpecHash": "mwS4GIXCJUoy9NJfYWbBoPtUCg63EZbjB5+cd36zmNcBaTjf9RN4BY1777y1CuNn1dcrBrs3JtsBiB3Q/9MRrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\hyalc\\Desktop\\Ecommerce\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -63,9 +63,11 @@
     "C:\\Users\\hyalc\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\hyalc\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\stackexchange.redis\\2.2.4\\stackexchange.redis.2.2.4.nupkg.sha512",
+    "C:\\Users\\hyalc\\.nuget\\packages\\stripe.net\\39.48.0\\stripe.net.39.48.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",

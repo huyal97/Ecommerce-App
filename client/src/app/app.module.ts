@@ -9,12 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
+import { HomeProductItemComponent } from './home/home-product-item/home-product-item.component';
 // import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 // import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HomeProductItemComponent
   ],
   imports: [
     BrowserModule,
