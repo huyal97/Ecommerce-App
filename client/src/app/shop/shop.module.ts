@@ -8,12 +8,13 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
 import { BasketModule } from '../basket/basket.module';
+import { ReviewComponent } from './review/review.component';
 
 
 
 
 @NgModule({
-  declarations: [ShopComponent, ProductItemComponent, ProductDetailComponent],
+  declarations: [ShopComponent, ProductItemComponent, ProductDetailComponent, ReviewComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket, IBasketItem, IBasketTotals } from 'src/app/shared/models/basket';
@@ -22,13 +22,13 @@ export class NavBarComponent implements OnInit {
   products: IProduct[];
   basket$: Observable<IBasket>
   basketTotals$: Observable<IBasketTotals>;
-  currentUser$: Observable<IUser>;
+  currentUser$: BehaviorSubject<IUser>;
 
   constructor(private router : Router,private basketService : BasketService,private accountService : AccountService) { }
 
   ngOnInit(): void {
     this.basket$ = this.basketService.basket$;
-    this.currentUser$ = this.accountService.currentUser$;
+    this.currentUser$ = this.accountService.currentUserSource;
     this.basketTotals$ = this.basketService.basketTotal$;
   }
 

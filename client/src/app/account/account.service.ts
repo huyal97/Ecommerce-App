@@ -12,7 +12,7 @@ import { IUser } from '../shared/models/user';
 })
 export class AccountService {
   baseUrl = environment.apiUrl;
-  private currentUserSource = new ReplaySubject<IUser>(1);
+   currentUserSource = new BehaviorSubject<IUser>(null);
   currentUser$ = this.currentUserSource.asObservable();
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -21,6 +21,7 @@ export class AccountService {
     if (token == null) {
       this.currentUserSource.next(null);
       return of(null);
+
     }
 
     let headers = new HttpHeaders();

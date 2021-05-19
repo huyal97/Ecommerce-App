@@ -6,6 +6,7 @@ import { IType } from '../shared/models/productType';
 import { map } from 'rxjs/operators';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
+import { IReview } from '../shared/models/review';
 
 @Injectable({
   providedIn: 'root'
@@ -51,5 +52,15 @@ export class ShopService {
 
   getTypes() {
     return this.http.get<IType[]>(this.baseUrl + 'products/types');
+  }
+  getReviews(id : number) {
+    return this.http.get<IReview[]>(this.baseUrl + 'review/' + id);
+  }
+  postReviews(review:IReview){
+    console.log("postReviews")
+
+    return this.http.post(this.baseUrl + 'review', review).subscribe(response => console.log(response));
+
+
   }
 }
