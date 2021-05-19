@@ -9,12 +9,13 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 
 const routes : Routes= [
+  {path: '',redirectTo: '/home',pathMatch: 'full'
+  },
   { path: 'categories', component: ShopComponent },
   { path: 'categories/:id', component: ProductDetailComponent },
   { path: 'product', component: ProductItemComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule),
-  data: { breadcrumb: 'Basket' } },
+
   {
     path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule),
 
@@ -32,7 +33,10 @@ const routes : Routes= [
     loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule),
     data: { breadcrumb: 'Orders' }
   },
-  { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
+
+  { path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule),
+  data: { breadcrumb: 'Basket' } },
 
 ];
 

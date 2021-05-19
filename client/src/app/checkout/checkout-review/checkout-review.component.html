@@ -1,10 +1,11 @@
-<div class="container">
-<div class="mt-4">
+
+<ng-container>
   <app-basket-summary
   [isBasket]=false
   [items]="(basket$ | async).items"
   ></app-basket-summary>
-</div>
+</ng-container>
+
 
 <div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
     <button class="btn btn-outline-primary" cdkStepperPrevious>
@@ -14,4 +15,5 @@
         Go to Payment <i class="fa fa-angle-right"></i>
     </button>
 </div>
-</div>
+
+
