@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
 import { IReview } from '../shared/models/review';
+import { ToastrService   } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ import { IReview } from '../shared/models/review';
 export class ShopService {
   baseUrl = 'https://localhost:44300/api/'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private toastr: ToastrService) { }
 
   getProducts(shopParams: ShopParams) {
     let params = new HttpParams();
@@ -59,7 +60,7 @@ export class ShopService {
   postReviews(review:IReview){
     console.log("postReviews")
 
-    return this.http.post(this.baseUrl + 'review', review).subscribe(response => console.log(response));
+    return this.http.post(this.baseUrl + 'review', review);
 
 
   }

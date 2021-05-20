@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AccountService } from 'src/app/account/account.service';
 import { IProduct } from 'src/app/shared/models/product';
@@ -18,9 +19,11 @@ export class ReviewComponent implements OnInit {
   @Input() product : IProduct;
   currentUser$: BehaviorSubject<IUser>;
   reviewForm: FormGroup;
+  isSubmited:boolean=false;
   review : IReview = {comment:null,rating:null,userEmail:null,productId:null } ;
 
-  constructor(private accountService : AccountService,private shopService: ShopService) { }
+  constructor(private accountService : AccountService, private toastr: ToastrService,
+    private shopService: ShopService) { }
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -49,7 +52,16 @@ export class ReviewComponent implements OnInit {
 
   onSubmit() {
     this.reviewToPost();
-    this.shopService.postReviews(this.review);
+
+    this.shopService.postReviews(this.review).subscribe(
+      (data) => { // Success
+      console.log(data)
+      this.toastr.success("Your review submitted!");
+      this.isSubmited= true;
+    },
+    (error) => {
+      console.error("Error: " + JSON.stringify(error));
+    });
 
   }
 

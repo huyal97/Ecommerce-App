@@ -1,3 +1,4 @@
+import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BasketService } from 'src/app/basket/basket.service';
@@ -15,11 +16,23 @@ export class ProductDetailComponent implements OnInit {
 
   product : IProduct;
   reviews : IReview[];
+  rating :number;
   constructor(private shopService : ShopService,private activatedRoute : ActivatedRoute,private basketService: BasketService) { }
 
   ngOnInit(): void {
+
       this.loadProduct()
       this.loadReviews();
+
+
+
+  }
+  findAverageRating(){
+    var result = this.reviews.map(a => a.rating);
+    var averageFunc = (result) => result.reduce((a, b) => a + b) / result.length;
+    var average = averageFunc(result);
+    console.log(average);
+    return average;
 
 
   }
@@ -37,6 +50,7 @@ export class ProductDetailComponent implements OnInit {
 
     this.shopService.getReviews(+this.activatedRoute.snapshot.paramMap.get('id')).subscribe(reviews =>{
       this.reviews=reviews;
+      this.rating = this.findAverageRating();
       console.log(this.reviews);
     }, error => {
       console.log(error)

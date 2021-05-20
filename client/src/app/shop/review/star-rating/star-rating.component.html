@@ -1,0 +1,13 @@
+<ng-container *ngIf="rating" >
+
+    <span class="heading" *ngIf="productDetail">User Rating</span>
+    <span [ngClass]="rating >= 1 ? 'fa fa-star checked' : 'fa fa-star'" id="rate_5"></span>
+    <span [ngClass]="rating >= 2 ? 'fa fa-star checked' : 'fa fa-star '" id="rate_4"></span>
+    <span [ngClass]="rating >= 3 ? 'fa fa-star checked' : 'fa fa-star'" id="rate_3"></span>
+    <span [ngClass]="rating >= 4 ? 'fa fa-star checked' : 'fa fa-star'" id="rate_2"></span>
+    <span [ngClass]="rating >= 5 ? 'fa fa-star checked' : 'fa fa-star'" id="rate_1"></span>
+    <p *ngIf="productDetail"><strong>{{rating.toFixed(1)}}</strong> average based on <strong>{{numberOfReviews}} reviews.</strong></p>
+</ng-container>
+<ng-container *ngIf="!rating" >
+  <p *ngIf="productDetail"><strong>Not yet reviewed</strong></p>
+</ng-container>

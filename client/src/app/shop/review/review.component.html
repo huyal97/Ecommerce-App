@@ -4,35 +4,39 @@
     <div class="ps-review">
       <div class="ps-review__thumbnail"><img src="assets/images/user/1.jpg" alt=""></div>
       <div class="ps-review__content">
+
         <header>
-          <select class="ps-rating">
-            <option value="1">1</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
-            <option value="5">5</option>
-          </select>
-          <p>By<a href=""> {{review.userEmail}}</a> - November 25, 2017</p>
+          <app-star-rating [rating]="review.rating"></app-star-rating>
+          <p>-</p><p>By<a href=""> {{review.userEmail}}</a> - November 25, 2017</p>
+
         </header>
         <p>{{review.comment}}</p>
       </div>
     </div>
     <br>
   </ng-container>
-
+  <ng-container *ngIf="!isSubmited">
   <form class="ps-product__review" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
     <h4>ADD YOUR REVIEW</h4>
     <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-            <div class="form-group">
-              <label>Your rating<span></span></label>
-              <select class="ps-rating"  formControlName="rating">
-                <option value="1">1</option>
-                <option value="1">2</option>
-                <option value="1">3</option>
-                <option value="1">4</option>
-                <option value="5">5</option>
-              </select>
+
+              <label><strong> Your rating</strong><span></span></label>
+              <div class="form-group">
+              <input type="radio" name="rating" id="rating1" value="1" formControlName="rating"/>
+              <label for="rating1">1 &nbsp; </label>
+
+              <input type="radio" name="rating" id="rating2" value="2" formControlName="rating"/>
+              <label for="rating2">2 &nbsp;</label>
+
+              <input type="radio" name="rating" id="rating3" value="3" formControlName="rating"/>
+              <label for="rating3">3 &nbsp;</label>
+
+              <input type="radio" name="rating" id="rating4" value="4" formControlName="rating"/>
+              <label for="rating4">4 &nbsp;</label>
+
+              <input type="radio" name="rating" id="rating5" value="5" formControlName="rating"/>
+              <label for="rating5">5</label>
             </div>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
@@ -46,4 +50,4 @@
           </div>
     </div>
   </form>
-
+</ng-container>

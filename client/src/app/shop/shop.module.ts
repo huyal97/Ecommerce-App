@@ -9,12 +9,13 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { RouterModule } from '@angular/router';
 import { BasketModule } from '../basket/basket.module';
 import { ReviewComponent } from './review/review.component';
+import { StarRatingComponent } from './review/star-rating/star-rating.component';
 
 
 
 
 @NgModule({
-  declarations: [ShopComponent, ProductItemComponent, ProductDetailComponent, ReviewComponent],
+  declarations: [ShopComponent, ProductItemComponent, ProductDetailComponent, ReviewComponent, StarRatingComponent],
   imports: [
     CommonModule,
     FormsModule,

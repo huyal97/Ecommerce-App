@@ -8,12 +8,32 @@
         
         
                 
-        {
-            "type": "pwa-chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}/client"
-        }
+        
+            {
+              "name": "ng serve",
+              "type": "chrome",
+              "request": "launch",              
+              "url": "http://localhost:4200/#",
+              "webRoot": "${workspaceFolder}/client",
+              
+            },
+            {
+              "name": "ng test",
+              "type": "chrome",
+              "request": "launch",
+              "url": "http://localhost:4200/",
+              "webRoot": "${workspaceFolder}/client",
+              
+              
+            },
+            {
+              "name": "ng e2e",
+              "type": "node",
+              "request": "launch",
+              "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
+              "protocol": "inspector",
+              "args": ["${workspaceFolder}/e2e/protractor.conf.js"]
+            }
+          
     ]
 }

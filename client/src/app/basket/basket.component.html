@@ -4,28 +4,32 @@
     </div>
 
 
-
-
-
 <main class="ps-main">
 
+  <div class="ps-container">
 <ng-container *ngIf="(basket$ | async)" >
 
-  <app-basket-summary *ngIf="(basketTotals$ | async) as basketTotal "
-  (decrement)="decrementItemQuantity($event)"
-  (increment)="incrementItemQuantity($event)"
-  (remove)="removeBasketItem($event)"
-  [items]="(basket$ | async).items"
-  [subtotal]="(basketTotals$ | async).subtotal"
-></app-basket-summary>
-</ng-container>
-</main>
-<app-order-totals
-    *ngIf="(basketTotals$ | async)"
-    [shippingPrice]="(basketTotals$ | async).shipping"
+  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <app-basket-summary *ngIf="(basketTotals$ | async) as basketTotal "
+    (decrement)="decrementItemQuantity($event)"
+    (increment)="incrementItemQuantity($event)"
+    (remove)="removeBasketItem($event)"
+    [items]="(basket$ | async).items"
     [subtotal]="(basketTotals$ | async).subtotal"
-    [total]="(basketTotals$ | async).total"
-></app-order-totals>
+    ></app-basket-summary>
+  </div>
+</ng-container>
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+  <app-order-totals
+      *ngIf="(basketTotals$ | async)"
+      [shippingPrice]="(basketTotals$ | async).shipping"
+      [subtotal]="(basketTotals$ | async).subtotal"
+      [total]="(basketTotals$ | async).total"
+  ></app-order-totals>
+</div>
+</div>
+</main>
+
 
 
 

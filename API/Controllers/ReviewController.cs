@@ -43,9 +43,10 @@ namespace API.Controllers
             _unitOfWork.Repository<Review>().Add(review);
             var result = await _unitOfWork.Complete();
 
-            if (result <= 0) return Ok();
-            
-            return Conflict(review);
+            if (result <= 0) return Conflict(review); 
+
+            return Ok();
+
 
         }
     }

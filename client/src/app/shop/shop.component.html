@@ -39,14 +39,14 @@
       <!--Category Sidebar-->
       <aside class="ps-widget--sidebar ps-widget--category">
         <div class="ps-widget__header">
-          <h3>Category</h3>
+          <h3>Brands</h3>
         </div>
         <div class="ps-widget__content">
           <ul class="ps-list--checked">
 
 
-            <div *ngFor="let type of types">
-              <li (click)="onTypeSelected(type.id)" [ngClass]="{'current': type.id === shopParams.typeId}"><a>{{type.name}}</a></li>
+            <div *ngFor="let brand of brands">
+              <li (click)="onBrandSelected(brand.id)" [ngClass]="{'current': brand.id === shopParams.brandId}"><a>{{brand.name}}</a></li>
             </div>
 
 
@@ -74,10 +74,10 @@
           <ul class="ps-list--checked">
 
             <ul class="ps-list--checked">
-              <div *ngFor="let brand of brands">
-                <li (click)="onBrandSelected(brand.id)" [ngClass]="{'current': brand.id === shopParams.brandId}"><a>{{brand.name}}</a></li>
-              </div>
 
+              <div *ngFor="let type of types">
+                <li (click)="onTypeSelected(type.id)" [ngClass]="{'current': type.id === shopParams.typeId}"><a>{{type.name}}</a></li>
+              </div>
             </ul>
           </ul>
         </div>

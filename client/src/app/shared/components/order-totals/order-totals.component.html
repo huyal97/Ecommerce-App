@@ -4,25 +4,25 @@
     <h3>Your Order</h3>
   </header>
   <div class="content">
-    <table class="table ps-checkout__products">
+    <table class="table ps-checkout__products" >
       <thead>
         <tr>
-          <th class="text-uppercase">Product</th>
-          <th class="text-uppercase">Total</th>
+          <th class="text-uppercase"><p>Product</p></th>
+          <th class="text-uppercase"><p>Total</p></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Subtotal</td>
-          <td>{{subtotal | currency}}</td>
+          <td><p class="total">Subtotal</p></td>
+          <td><p class="total">{{subtotal | currency}}</p></td>
         </tr>
         <tr>
-          <td>Shipping Price</td>
-          <td>{{shippingPrice | currency}}</td>
+          <td><p class="total">Shipping Price</p></td>
+          <td><p class="total">{{shippingPrice | currency}}</p>
         </tr>
         <tr>
-          <td>Order Total</td>
-          <td>{{total | currency}}</td>
+          <td><p class="total">Order Total</p></td>
+          <td><p class="total">{{total | currency}}</p></td>
         </tr>
       </tbody>
     </table>
@@ -34,9 +34,14 @@
         <input class="form-control" type="radio" id="rdo01" name="payment" checked>
         <label for="rdo01">Cheque Payment</label>
         <p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+        <ul class="ps-payment-method">
+          <li><a href="#"><img src="assets/images/payment/1.png" alt=""></a></li>
+          <li><a href="#"><img src="assets/images/payment/2.png" alt=""></a></li>
+          <li><a href="#"><img src="assets/images/payment/3.png" alt=""></a></li>
+        </ul>
       </div>
     </div>
-    <div class="form-group paypal">
+    <!-- <div class="form-group paypal">
       <div class="ps-radio ps-radio--inline">
         <input class="form-control" type="radio" name="payment" id="rdo02">
         <label for="rdo02">Paypal</label>
@@ -46,7 +51,8 @@
         <li><a href="#"><img src="assets/images/payment/2.png" alt=""></a></li>
         <li><a href="#"><img src="assets/images/payment/3.png" alt=""></a></li>
       </ul>
-      <button class="ps-btn ps-btn--fullwidth">Place Order<i class="ps-icon-next"></i></button>
-    </div>
+
+    <button class="ps-btn ps-btn--fullwidth">Place Order<i class="ps-icon-next"></i></button>
+    </div> -->
   </footer>
 </div>
