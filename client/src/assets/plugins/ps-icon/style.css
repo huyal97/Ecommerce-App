@@ -1,17 +1,18 @@
 @font-face {
-  font-family: 'ps-icon';
-  src:  url('fonts/ps-icon.eot?ikt2lp');
-  src:  url('fonts/ps-icon.eot?ikt2lp#iefix') format('embedded-opentype'),
-    url('fonts/ps-icon.ttf?ikt2lp') format('truetype'),
-    url('fonts/ps-icon.woff?ikt2lp') format('woff'),
-    url('fonts/ps-icon.svg?ikt2lp#ps-icon') format('svg');
+  font-family: "ps-icon";
+  src: url("fonts/ps-icon.eot?ikt2lp");
+  src: url("fonts/ps-icon.eot?ikt2lp#iefix") format("embedded-opentype"),
+    url("fonts/ps-icon.ttf?ikt2lp") format("truetype"),
+    url("fonts/ps-icon.woff?ikt2lp") format("woff"),
+    url("fonts/ps-icon.svg?ikt2lp#ps-icon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="ps-icon-"], [class*=" ps-icon-"] {
+[class^="ps-icon-"],
+[class*=" ps-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'ps-icon' !important;
+  font-family: "ps-icon" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

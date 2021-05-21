@@ -7,36 +7,41 @@ import { ProductDetailComponent } from './shop/product-detail/product-detail.com
 import { BasketComponent } from './basket/basket.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './home/home.component';
+import { IndexModule } from './layout/index/index.module';
+import { IndexComponent } from './layout/index/index.component';
+import { DashboardComponent } from './layout/dashboard/dashboard.component';
 
 const routes : Routes= [
-  {path: '',redirectTo: '/home',pathMatch: 'full'
-  },
-  { path: 'categories', component: ShopComponent },
-  { path: 'categories/:id', component: ProductDetailComponent },
-  { path: 'product', component: ProductItemComponent },
-  { path: 'home', component: HomeComponent },
-
   {
-    path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule),
+    path:'',
+    component:IndexComponent,
+    children: [
+      {
+        path:'',
+        pathMatch:'full',
+        loadChildren: () => import('./layout/index/index.module').then(m=> m.IndexModule)
+      },
 
-    data: { breadcrumb: {skip: true} }
-  },
-  {
-    path: 'checkout',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule),
-    data: { breadcrumb: 'Checkout' }
+    ]
+
+
   },
   {
-    path: 'orders',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule),
-    data: { breadcrumb: 'Orders' }
-  },
-  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
+    path:'dashboard',
+    component:DashboardComponent,
+    children: [
+      {
+        path:'',
+        pathMatch:'full',
+        loadChildren: () => import('./layout/dashboard/dashboard.module').then(m=> m.DashboardModule)
+      },
 
-  { path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule),
-  data: { breadcrumb: 'Basket' } },
+    ]
+
+
+  },
+
+
 
 ];
 
@@ -44,7 +49,9 @@ const routes : Routes= [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    IndexModule
+
   ],
   exports:[RouterModule
   ]

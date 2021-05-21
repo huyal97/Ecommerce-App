@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 // import { ToastrService } from 'ngx-toastr';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket } from 'src/app/shared/models/basket';
@@ -31,7 +32,7 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
   cardCvcValid = false;
 
   constructor(private basketService: BasketService, private checkoutService: CheckoutService,
-   /* private toastr: ToastrService,*/ private router: Router) { }
+    private toastr: ToastrService, private router: Router) { }
 
   ngAfterViewInit(): void {
     this.stripe = Stripe('pk_test_51Ir6o3J0w5RmCTPcEQFFiNbffwBSuyttkXUZhJmI8WXlU3qIw6dh7QeUDXOjgvRiT2RRb05roTKmZA636tg6PvC300R0s32P4o');
@@ -86,7 +87,7 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
         const navigationExtras: NavigationExtras = { state: createdOrder };
         this.router.navigate(['checkout/success'], navigationExtras);
       } else {
-        // this.toastr.error(paymentResult.error.message);
+         this.toastr.error(paymentResult.error.message);
       }
       this.loading = false;
     } catch (error) {
