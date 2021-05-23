@@ -22,7 +22,7 @@ import { StarRatingComponent } from './review/star-rating/star-rating.component'
     NgxPaginationModule,
     SharedModule,
     RouterModule,
-    BasketModule
+
   ],
   exports: [ShopComponent, ProductItemComponent]
 })

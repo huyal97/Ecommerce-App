@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { HomeProductItemComponent } from './home/home-product-item/home-product-item.component';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { IndexComponent } from './layout/index/index.component';
+import { IndexModule } from './layout/index/index.module';
 // import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 // import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
@@ -27,6 +28,7 @@ import { IndexComponent } from './layout/index/index.component';
   imports: [
     BrowserModule,
     ShopModule,
+    IndexModule,
     HttpClientModule,
     CoreModule,
     AppRoutingModule,

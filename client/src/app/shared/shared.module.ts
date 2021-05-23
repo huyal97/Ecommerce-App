@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagingHeaderComponent } from './components/paging-header/paging-header.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
@@ -16,7 +16,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ReactiveFormsModule,
     CdkStepperModule,
-    RouterModule
+    RouterModule,
+    FormsModule
+
   ],
   exports:[
     PagingHeaderComponent,
