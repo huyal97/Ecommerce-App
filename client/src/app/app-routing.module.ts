@@ -15,33 +15,39 @@ const routes : Routes= [
   {
     path:'',
     component:IndexComponent,
-    pathMatch:'full',
-    children: [
-      {
-        path:'',
-        pathMatch:'full',
-        loadChildren: () => import('./layout/index/index.module').then(m=> m.IndexModule)
-      },
+  children:[
+          { path: '',component: HomeComponent,pathMatch: 'full'},
+          { path: 'categories', component: ShopComponent },
+          { path: 'categories/:id', component: ProductDetailComponent },
+          { path: 'product', component: ProductItemComponent },
+          {
+            path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule),
+            data: { breadcrumb: {skip: true} }
+          },
+          {
+            path: 'checkout',
+            canActivate: [AuthGuard],
+            loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule),
+            data: { breadcrumb: 'Checkout' }
+          },
+          {
+            path: 'orders',
+            canActivate: [AuthGuard],
+            loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule),
+            data: { breadcrumb: 'Orders' }
+          },
+          {
+            path: 'basket',
+            canActivate: [AuthGuard],
+            loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule),
+            data: { breadcrumb: 'Basket'}
+          },
+          {
+            path: '**', redirectTo: 'not-found', pathMatch: 'full'
+          },
 
-    ]
-
-
-  },
-  {
-    path:'dashboard',
-    component:DashboardComponent,
-    children: [
-      {
-        path:'',
-        pathMatch:'full',
-        loadChildren: () => import('./layout/dashboard/dashboard.module').then(m=> m.DashboardModule)
-      },
-
-    ]
-
-
-  },
-
+  ]
+},
 
 
 ];

@@ -14,6 +14,7 @@
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Quick Example</h3>
+
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -51,7 +52,12 @@
               </div>
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">
+                  <div *ngIf="isAddMode">Create</div>
+                  <div *ngIf="!isAddMode">Update</div>
+
+
+                </button>
               </div>
             </form>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { IBrand } from 'src/app/shared/models/brand';
 import { IProduct } from 'src/app/shared/models/product';
@@ -16,17 +17,56 @@ import { ProductService } from '../../../core/services/product.service';
 export class ProductAddComponent implements OnInit {
   product: IProduct;
   productForm: FormGroup;
+  id: number;
   brands: IBrand[];
   types: IType[];
-  constructor(private shopService: ShopService,private productService:ProductService,
+  isAddMode: boolean;
+  constructor(private shopService: ShopService,private productService:ProductService, private route: ActivatedRoute,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+
+    this.id = this.route.snapshot.params['id'];
+    this.isAddMode = !this.id;
     this.getBrands();
     this.getTypes();
     this.createLoginForm();
+    if (this.isAddMode) {
+
+
+    } else {
+      this.getSingleProduct(this.id);
+
+    }
+
+
+
+
   }
 
+
+  getSingleProduct(id:number){
+
+    this.shopService.getProduct(id).subscribe( (data)=> {
+      this.product=data;
+      console.log(data);
+      this.updateForm();
+    },error => console.log(error)
+    )
+
+  }
+  updateForm(){
+
+      this.productForm.patchValue({
+        name: this.product.name,
+        description: this.product.description,
+        price: this.product.price,
+        pictureUrl: this.product.pictureUrl,
+        productType: this.product.productType,
+        productBrand: this.product.productBrand,
+      });
+
+  }
   createLoginForm() {
     this.productForm = new FormGroup({
       name: new FormControl(),
@@ -54,6 +94,13 @@ export class ProductAddComponent implements OnInit {
   }
   onSubmit(){
 
+        if (this.isAddMode) {
+            this.createProduct();
+        } else {
+            this.updateProduct();
+        }
+  }
+  createProduct(){
     this.productService.postProduct(this.productForm.value).subscribe(
       data => {
         console.log(data);
@@ -65,6 +112,21 @@ export class ProductAddComponent implements OnInit {
       this.productForm.reset({name:'',describe:'',price:'',pictureUrl:'',productType:'',productBrand:''});
 
     })
+
+  }
+  updateProduct(){
+    this.productService.putProduct(this.productForm.value,this.id).subscribe(
+      data => {
+        console.log(data);
+        console.log("Succelful post produc subcribe");
+      this.toastr.success('Product saved');
+      this.productForm.reset({name:'',describe:'',price:'',pictureUrl:'',productType:'',productBrand:''});
+    }, error => {
+      this.toastr.error(error.message);
+      this.productForm.reset({name:'',describe:'',price:'',pictureUrl:'',productType:'',productBrand:''});
+
+    })
+
   }
 
 

@@ -1,5 +1,12 @@
 
 <main class="ps-main">
+  <swiper #swiper [slidesPerView]="1" [centeredSlides]="true"
+		[navigation]="{ prevEl: '.swiper-navigation-prev', nextEl: '.swiper-navigation-next' }"
+		[pagination]="pagination">
+		<ng-template swiperSlide *ngFor="let slide of slides2; index as i">
+      <img src="{{slide}}" alt="Girl in a jacket" width="1920" height="600">
+		</ng-template>
+	</swiper>
   <div class="ps-banner">
     <div class="rev_slider fullscreenbanner" id="home-banner">
       <ul>
@@ -28,47 +35,11 @@
       </ul>
     </div>
   </div>
-  <div class="ps-section ps-section--hotdeal-3 pt-80 pb-40">
-    <div class="ps-container">
-      <div class="ps-section__header mb-50">
-        <h3 class="ps-section__title" data-mask="Promotion">- Our Event</h3>
-      </div>
-      <div class="ps-section__content">
-        <div class="row">
-              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
-                <div class="ps-product--hotdeal reverse">
-                  <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-detail.html"></a><img src="assets/images/access/5.jpg" alt=""></div>
-                  <div class="ps-product__content"><a class="ps-product__title" href="product-detail.html">Slim Fit Men Sport Hoodie</a>
-                    <p class="ps-product__price">Only: <span>£178</span></p>
-                    <div class="ps-product__status">
-                      <div class="sold">Already sold: <span>10</span></div>
-                      <div class="avaiable">Avaiable: <span>30</span></div>
-                    </div>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                    </div>
-                          <ul class="ps-countdown" data-time="December 13, 2017 15:37:25">
-                            <li><span class="hours"></span><p>Hours</p></li>
-                            <li class="divider">:</li>
-                            <li><span class="minutes"></span><p>minutes</p></li>
-                            <li class="divider">:</li>
-                            <li><span class="seconds"></span><p>Seconds</p></li>
-                          </ul><a class="ps-btn" href="cart.html">Order Today<i class="ps-icon-next"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 "><a class="ps-offer mb-30" href="product-detail.html"><img src="assets/images/offer/home-3-1.jpg" alt=""></a><a class="ps-offer" href="product-detail.html"><img src="assets/images/offer/home-3-3.jpg" alt=""></a>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 "><a class="ps-offer" href="product-detail.html"><img src="assets/images/offer/home-3-2.jpg" alt=""></a>
-              </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <div class="ps-section--features-product ps-section masonry-root pt-40 pb-80">
     <div class="ps-container">
       <div class="ps-section__header mb-50">
-        <h3 class="ps-section__title" data-mask="features">- New Product</h3>
+
         <ul class="ps-masonry__filter">
           <li class="current"><a href="#" data-filter="*">All <sup>8</sup></a></li>
           <li><a href="#" data-filter=".nike">Nike <sup>1</sup></a></li>
@@ -89,7 +60,7 @@
       </div>
     </div>
   </div>
-  <div class="ps-features pt-80 pb-80 bg--cover" data-background="https://amnet-systems.com/wp-content/uploads/2018/04/Childrens-book-publishing.jpg">
+  <div class="ps-features pt-80 pb-80 bg--cover" data-background="https://www.roadrunnersports.com/rrs/img/home/ver2/20201110_hp_d_90Day.jpg">
     <div class="ps-container">
       <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">

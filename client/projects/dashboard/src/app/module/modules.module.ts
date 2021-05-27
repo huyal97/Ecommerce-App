@@ -7,21 +7,24 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsModule } from './products/products.module';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from '../shared/shared.module';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [OrdersComponent, OrderDetailComponent],
   imports: [
     CommonModule,
     ModulesRoutingModule,
     HomeModule,
-    ProductsModule,
+
     SharedModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
 
     })
-  ]
+  ],
+  exports:[OrdersComponent]
 })
 export class ModulesModule { }

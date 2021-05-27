@@ -1,8 +1,10 @@
 <div class="content-wrapper">
 
 <app-content-header [pageHeader]="'Products'"></app-content-header>
+
   <!-- Main content -->
   <section class="content">
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -10,7 +12,9 @@
           <!-- /.card -->
 
           <div class="card">
+            <button type="submit" class="btn btn-primary" routerLink="create">Add New Product</button>
             <div class="card-header">
+
               <h3 class="card-title">DataTable with default features</h3>
             </div>
             <!-- /.card-header -->
@@ -22,20 +26,17 @@
                   <th>Picture</th>
                   <th>Name</th>
                   <th>Brand</th>
-
-
-
+                  <th>Delete</th>
+                  <th>Update</th>
                 </tr>
                 </thead>
                 <tbody>
-
                     <tr *ngFor="let product of products">
                       <td><img height="100px" width="100px" src="{{product.pictureUrl}}"></td>
                       <td>{{product.name}}</td>
                       <td>{{product.productBrand}}</td>
-
-
-
+                      <td><button (click)="deleteProduct(product.id)" class="fas fa-trash-alt"></button></td>
+                      <td><a [routerLink]="['./update', product.id]">Update</a></td>
 
                     </tr>
 

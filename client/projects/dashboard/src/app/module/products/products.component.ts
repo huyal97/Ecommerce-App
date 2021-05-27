@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { IProduct } from 'src/app/shared/models/product';
 import { ShopParams } from 'src/app/shared/models/shopParams';
 import { ShopService } from 'src/app/shop/shop.service';
+import { ProductService } from '../../core/services/product.service';
 
 
 
@@ -25,7 +27,8 @@ export class ProductsComponent implements OnInit {
   ;
   productProperties: string[];
   shopParams = new ShopParams();
-  constructor(private shopService : ShopService) { }
+  constructor(private shopService : ShopService,private productService: ProductService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -42,5 +45,9 @@ export class ProductsComponent implements OnInit {
    }, error=> {
      console.log(error)
    })
+ }
+ deleteProduct(int:number){
+   this.productService.deleteProduct(int).subscribe(()=>{this.toastr.success("Product is Deleted");
+  this.getProducts();});
  }
 }

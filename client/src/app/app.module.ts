@@ -14,6 +14,7 @@ import { HomeProductItemComponent } from './home/home-product-item/home-product-
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { IndexComponent } from './layout/index/index.component';
 import { IndexModule } from './layout/index/index.module';
+import { SwiperModule } from 'swiper/angular';
 // import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 // import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
@@ -32,10 +33,12 @@ import { IndexModule } from './layout/index/index.module';
     HttpClientModule,
     CoreModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SwiperModule
 
 
   ],
+  exports:[SwiperModule],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },

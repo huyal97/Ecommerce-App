@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { IProduct } from 'src/app/shared/models/product';
 
 @Injectable({
@@ -8,11 +7,20 @@ import { IProduct } from 'src/app/shared/models/product';
 })
 export class ProductService {
   baseUrl = 'https://localhost:44300/api/'
-  constructor(private http: HttpClient,private toastr: ToastrService) { }
+  constructor(private http: HttpClient) { }
 
 
   postProduct(product:IProduct){
-    console.log("postReviews")
+
     return this.http.post(this.baseUrl + 'products', product);
   }
+  deleteProduct(id:number){
+
+    return this.http.delete(this.baseUrl + 'products/'+id);
+  }
+  putProduct(product:IProduct,id:number){
+
+    return this.http.put(this.baseUrl + 'products/'+ id, product);
+  }
 }
+
