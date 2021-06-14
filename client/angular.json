@@ -17,7 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-app",
+            "baseHref": "/",
+            "deployUrl": "/",
+            "outputPath": "../API/wwwroot/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,7 +35,29 @@
               "./node_modules/ngx-toastr/toastr.css",
               "./node_modules/swiper/swiper-bundle"
             ],
-            "scripts": []
+            "scripts": ["./src/assets/plugins/jquery/dist/jquery.min.js",
+              "./src/assets/plugins/bootstrap/dist/js/bootstrap.min.js",
+              "./src/assets/plugins/jquery-bar-rating/dist/jquery.barrating.min.js",
+              "./src/assets/plugins/owl-carousel/owl.carousel.min.js",
+              "./src/assets/plugins/gmap3.min.js",
+              "./src/assets/plugins/imagesloaded.pkgd.js",
+              "./src/assets/plugins/isotope.pkgd.min.js",
+              "./src/assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js",
+              "./src/assets/plugins/jquery.matchHeight-min.js",
+              "./src/assets/plugins/slick/slick/slick.min.js",
+              "./src/assets/plugins/elevatezoom/jquery.elevatezoom.js",
+              "./src/assets/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js",
+              "./src/assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js",
+              "./src/assets/js/main.js"
+
+              ]
           },
           "configurations": {
             "production": {
@@ -59,7 +83,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumError": "400kb"
                 }
               ]
             }
@@ -68,7 +92,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-app:build",
+            "browserTarget": "my-app:build"
 
           },
           "configurations": {
@@ -142,7 +166,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Dashboard",
+            "baseHref": "/dashboard",
+            "deployUrl": "/dashboard/",
+            "outputPath": "../API/wwwroot/dashboard",
             "index": "projects/dashboard/src/index.html",
             "main": "projects/dashboard/src/main.ts",
             "polyfills": "projects/dashboard/src/polyfills.ts",
@@ -154,7 +180,8 @@
             ],
             "styles": [
               "projects/dashboard/src/styles.scss",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+
             ],
             "scripts": []
           },

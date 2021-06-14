@@ -8,9 +8,7 @@
                   <p>Welcome to Karabuk Shoes</p>
                 </div>
 
-                <ng-container *ngIf="(currentUser$ | async) === null">
-                  <a href="#">Login & Regiser</a>
-                </ng-container>
+
 
 
 
@@ -46,7 +44,7 @@
           </div>
           <div class="navigation__column center">
                 <ul class="main-menu menu">
-                  <li class="menu-item menu-item-has-children dropdown"><a routerLink="/">Home</a>
+                  <li class="menu-item menu-item-has-children dropdown"><a href="/">Home</a>
 
                   </li>
                   <li class="menu-item menu-item-has-children has-mega-menu"><a routerLink="/categories">Shoes</a>
@@ -78,7 +76,7 @@
               <input (keydown.enter)="onSearch($event.target.value)" class="form-control" type="text" placeholder="Search Product…">
               <button><i class="ps-icon-search"></i></button>
             </div>
-            <div class="ps-cart"><a class="ps-cart__toggle" href="#">
+            <div class="ps-cart"><a class="ps-cart__toggle" routerLink="/basket">
               <span *ngIf="(basket$ | async) as basket"><i>{{basket.items.length}}</i></span>
               <i class="ps-icon-shopping-cart"></i></a>
               <div class="ps-cart__listing">
@@ -97,7 +95,7 @@
                   <p>Number of items:<span>{{(basket$ | async).items.length}}</span></p>
                   <p>Item Total:<span>{{(basketTotals$|async).subtotal | currency}}</span></p>
                 </div>
-                <div class="ps-cart__footer"><a class="ps-btn" href="cart.html">Check out<i class="ps-icon-arrow-left"></i></a></div>
+                <div class="ps-cart__footer"><a class="ps-btn" routerLink="/basket">Check out<i class="ps-icon-arrow-left"></i></a></div>
               </div>
             </div>
             <div class="menu-toggle"><span></span></div>

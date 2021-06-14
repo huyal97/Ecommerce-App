@@ -118,6 +118,16 @@ Image credits: unsplash.com
 }
 
 /********************************/
+/*          Flex       */
+/********************************/
+
+.conteiner1 {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/********************************/
 /*          Media Queries       */
 /********************************/
 @media screen and (min-width: 980px) {

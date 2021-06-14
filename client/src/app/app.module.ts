@@ -11,7 +11,6 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { HomeProductItemComponent } from './home/home-product-item/home-product-item.component';
-import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { IndexComponent } from './layout/index/index.component';
 import { IndexModule } from './layout/index/index.module';
 import { SwiperModule } from 'swiper/angular';
@@ -23,7 +22,6 @@ import { SwiperModule } from 'swiper/angular';
     AppComponent,
     HomeComponent,
     HomeProductItemComponent,
-    DashboardComponent,
     IndexComponent
   ],
   imports: [
@@ -38,7 +36,7 @@ import { SwiperModule } from 'swiper/angular';
 
 
   ],
-  exports:[SwiperModule],
+  exports:[],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },

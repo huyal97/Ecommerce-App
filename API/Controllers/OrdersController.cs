@@ -6,6 +6,7 @@ using API.Extensions;
 using AutoMapper;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -14,8 +15,10 @@ namespace API.Controllers
     {
         private readonly IOrderService _orderService;
         private readonly IMapper _mapper;
-        public OrdersController(IOrderService orderService, IMapper mapper)
+        IGenericRepository<Order> _orderRepository;
+        public OrdersController(IOrderService orderService, IMapper mapper,IGenericRepository<Order> orderRepository)
         {
+            _orderRepository = orderRepository;
             _mapper = mapper;
             _orderService = orderService;
         }
@@ -41,6 +44,16 @@ namespace API.Controllers
 
             var orders = await _orderService.GetOrdersForUserAsync(email);
 
+            return Ok(_mapper.Map<IReadOnlyList<OrderToReturnDto>>(orders));
+        }
+        [HttpGet("all")]
+        public async Task<ActionResult<IReadOnlyList<OrderDto>>> GetOrders()
+        {
+            var spec = new OrderWithItemsAndDeliveryMethod();
+
+            var orders = await _orderRepository.ListAsync(spec);
+
+            
             return Ok(_mapper.Map<IReadOnlyList<OrderToReturnDto>>(orders));
         }
 

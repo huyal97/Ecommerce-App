@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { BasketModule } from '../basket/basket.module';
 import { ReviewComponent } from './review/review.component';
 import { StarRatingComponent } from './review/star-rating/star-rating.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -22,6 +23,8 @@ import { StarRatingComponent } from './review/star-rating/star-rating.component'
     NgxPaginationModule,
     SharedModule,
     RouterModule,
+    MatSliderModule
+
 
   ],
   exports: [ShopComponent, ProductItemComponent]

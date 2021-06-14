@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pKrXjbql4JxDwOwh1yMzabma9XUMprY/z0W8IdQGi7Ke321jzDvpAg8H03hIgzsL++pjdGGLAXXiyqeuF23vIA==",
+  "dgSpecHash": "uMv1P73JN7f/dt08Ka1V5tHJbHjWHPnfrhc1c5DxMhsEgYIWiBGKHgupBtU5IjzN+2BBy6sZQXIYmG11Zi60jQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\hyalc\\Desktop\\Ecommerce\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,8 @@
     "C:\\Users\\hyalc\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\hyalc\\.nuget\\packages\\npgsql\\5.0.4\\npgsql.5.0.4.nupkg.sha512",
+    "C:\\Users\\hyalc\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.5\\npgsql.entityframeworkcore.postgresql.5.0.5.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\stackexchange.redis\\2.2.4\\stackexchange.redis.2.2.4.nupkg.sha512",
@@ -99,6 +101,7 @@
     "C:\\Users\\hyalc\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
+    "C:\\Users\\hyalc\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\hyalc\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",

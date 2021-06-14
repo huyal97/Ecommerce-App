@@ -9,8 +9,8 @@ namespace Infrastructure.Data.Config
         public void Configure(EntityTypeBuilder<Review> builder)
         {
             builder.Property(p => p.Id).IsRequired();
-            builder.Property(p => p.Comment).HasMaxLength(500);
-            builder.Property(p => p.Rating).IsRequired().HasMaxLength(10);            
+            builder.Property(p => p.Comment);
+            builder.Property(p => p.Rating).IsRequired();            
             builder.HasOne(b => b.Product).WithMany()
                 .HasForeignKey(p => p.ProductId);
             

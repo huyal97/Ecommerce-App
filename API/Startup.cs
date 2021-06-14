@@ -39,13 +39,23 @@ namespace Ecommerce
 
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
+
+
             services.AddDbContext<StoreContext>(x =>
-                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")
-                ));
+                x.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<AppIdentityDbContext>(x =>
             {
-                x.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+                x.UseNpgsql(Configuration.GetConnectionString("IdentityConnection"));
             });
+
+
+            //services.AddDbContext<StoreContext>(x =>
+            //    x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")
+            //    ));
+            //services.AddDbContext<AppIdentityDbContext>(x =>
+            //{
+            //    x.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"));
+            //});
 
 
             services.AddSingleton<IConnectionMultiplexer>(c =>
@@ -76,6 +86,7 @@ namespace Ecommerce
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseCors("CorsPolicy");
@@ -88,6 +99,9 @@ namespace Ecommerce
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                //endpoints.MapFallbackToController("Index", "Fallback");
+                
+                
             });
         }
     }

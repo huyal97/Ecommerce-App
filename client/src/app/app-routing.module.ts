@@ -9,7 +9,6 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { IndexModule } from './layout/index/index.module';
 import { IndexComponent } from './layout/index/index.component';
-import { DashboardComponent } from './layout/dashboard/dashboard.component';
 
 const routes : Routes= [
   {

@@ -8,12 +8,14 @@ import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
 import { IReview } from '../shared/models/review';
 import { ToastrService   } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl = 'https://localhost:44300/api/'
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient,private toastr: ToastrService) { }
 

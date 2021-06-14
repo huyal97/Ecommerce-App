@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 import { ActivatedRoute } from '@angular/router';
 import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
@@ -97,6 +98,13 @@ export class ShopComponent implements OnInit {
   eventValue(value: any){
     console.log(value);
 
+  }
+  formatLabel(value: number) {
+
+      return value + '$';
+  }
+  sliderValue($event){
+console.log($event);
   }
 
 }

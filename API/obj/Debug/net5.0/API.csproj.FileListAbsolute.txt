@@ -77,3 +77,9 @@ C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Microsoft.Extensions.Ident
 C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Stripe.net.dll
+C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Npgsql.dll
+C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Data\SeedData\brands.json
+C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Data\SeedData\delivery.json
+C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Data\SeedData\products.json
+C:\Users\hyalc\Desktop\Ecommerce\API\bin\Debug\net5.0\Data\SeedData\types.json
