@@ -35,26 +35,8 @@
               "./node_modules/ngx-toastr/toastr.css",
               "./node_modules/swiper/swiper-bundle"
             ],
-            "scripts": ["./src/assets/plugins/jquery/dist/jquery.min.js",
-              "./src/assets/plugins/bootstrap/dist/js/bootstrap.min.js",
-              "./src/assets/plugins/jquery-bar-rating/dist/jquery.barrating.min.js",
-              "./src/assets/plugins/owl-carousel/owl.carousel.min.js",
-              "./src/assets/plugins/gmap3.min.js",
-              "./src/assets/plugins/imagesloaded.pkgd.js",
-              "./src/assets/plugins/isotope.pkgd.min.js",
-              "./src/assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js",
-              "./src/assets/plugins/jquery.matchHeight-min.js",
-              "./src/assets/plugins/slick/slick/slick.min.js",
-              "./src/assets/plugins/elevatezoom/jquery.elevatezoom.js",
-              "./src/assets/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js",
-              "./src/assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js",
+            "scripts": [
+
               "./src/assets/js/main.js"
 
               ]

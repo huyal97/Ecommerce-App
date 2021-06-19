@@ -11,8 +11,6 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { HomeProductItemComponent } from './home/home-product-item/home-product-item.component';
-import { IndexComponent } from './layout/index/index.component';
-import { IndexModule } from './layout/index/index.module';
 import { SwiperModule } from 'swiper/angular';
 // import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 // import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
@@ -22,12 +20,11 @@ import { SwiperModule } from 'swiper/angular';
     AppComponent,
     HomeComponent,
     HomeProductItemComponent,
-    IndexComponent
+
   ],
   imports: [
     BrowserModule,
     ShopModule,
-    IndexModule,
     HttpClientModule,
     CoreModule,
     AppRoutingModule,

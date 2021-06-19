@@ -7,14 +7,9 @@ import { ProductDetailComponent } from './shop/product-detail/product-detail.com
 import { BasketComponent } from './basket/basket.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './home/home.component';
-import { IndexModule } from './layout/index/index.module';
-import { IndexComponent } from './layout/index/index.component';
+
 
 const routes : Routes= [
-  {
-    path:'',
-    component:IndexComponent,
-  children:[
           { path: '',component: HomeComponent,pathMatch: 'full'},
           { path: 'categories', component: ShopComponent },
           { path: 'categories/:id', component: ProductDetailComponent },
@@ -45,9 +40,6 @@ const routes : Routes= [
             path: '**', redirectTo: 'not-found', pathMatch: 'full'
           },
 
-  ]
-},
-
 
 ];
 
@@ -56,7 +48,6 @@ const routes : Routes= [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    IndexModule
 
   ],
   exports:[RouterModule

@@ -3,7 +3,7 @@
 <head>
 
 
-  <base href="./ecommerce" target="_blank">
+  <base href="/">
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,32 +16,48 @@
     <meta name="description" content="Default keyword">
     <title>Sky - Product Listing</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Font Awesome Icon Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/plugins/ps-icon/style.css">
+  <!-- CSS Library-->
+  <link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/plugins/owl-carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="assets/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+  <link rel="stylesheet" href="assets/plugins/slick/slick/slick.css">
+  <link rel="stylesheet" href="assets/plugins/bootstrap-select/dist/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="assets/plugins/Magnific-Popup/dist/magnific-popup.css">
+  <link rel="stylesheet" href="assets/plugins/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="assets/plugins/revolution/css/settings.css">
+  <link rel="stylesheet" href="assets/plugins/revolution/css/layers.css">
+  <link rel="stylesheet" href="assets/plugins/revolution/css/navigation.css">
+  <!-- Custom-->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+  <!--WARNING: Respond.js doesn't work if you view the page via file://-->
+  <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-<body  >
+<body class="ps-loading" >
   <app-root></app-root>
-<!-- Stripe-->
-<script src="https://js.stripe.com/v3/"></script>
 
-<!-- JS Library-->
-<script type="text/javascript" src="assets/plugins/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
-<script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-<script type="text/javascript" src="assets/plugins/gmap3.min.js"></script>
-<script type="text/javascript" src="assets/plugins/imagesloaded.pkgd.js"></script>
-<script type="text/javascript" src="assets/plugins/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="assets/plugins/jquery.matchHeight-min.js"></script>
-<script type="text/javascript" src="assets/plugins/slick/slick/slick.min.js"></script>
-<script type="text/javascript" src="assets/plugins/elevatezoom/jquery.elevatezoom.js"></script>
-<script type="text/javascript" src="assets/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script><script type="text/javascript" src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+  <!-- Stripe-->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- JS Library-->
+  <script type="text/javascript" src="assets/plugins/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/gmap3.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/imagesloaded.pkgd.js"></script>
+  <script type="text/javascript" src="assets/plugins/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery.matchHeight-min.js"></script>
+  <script type="text/javascript" src="assets/plugins/slick/slick/slick.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/elevatezoom/jquery.elevatezoom.js"></script>
+  <script type="text/javascript" src="assets/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script><script type="text/javascript" src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 <script type="text/javascript" src="assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
@@ -51,9 +67,7 @@
 <script type="text/javascript" src="assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
 <script type="text/javascript" src="assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
 <script type="text/javascript" src="assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<!-- Custom scripts-->
-<script type="text/javascript" src="assets/js/main.js"></script>
-
-
+  <!-- Custom scripts-->
+  <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
