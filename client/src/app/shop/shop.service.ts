@@ -33,10 +33,10 @@ export class ShopService {
     if (shopParams.search) {
       params = params.append('search', shopParams.search)
     }
-
     params = params.append('sort', shopParams.sort);
     params = params.append('pageIndex', shopParams.pageNumber.toString());
     params = params.append('pageSize', shopParams.pageSize.toString());
+    params = params.append('minPrice', shopParams.minPrice.toString());
 
     return this.http.get<IPagination>(this.baseUrl + 'products', { observe: 'response', params })
       .pipe(

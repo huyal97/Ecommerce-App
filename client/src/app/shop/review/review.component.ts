@@ -58,10 +58,23 @@ export class ReviewComponent implements OnInit {
       console.log(data)
       this.toastr.success("Your review submitted!");
       this.isSubmited= true;
+      this.loadReviews();
     },
     (error) => {
       console.error("Error: " + JSON.stringify(error));
+      this.toastr.error("Error when submit review.");
     });
 
+
+  }
+  loadReviews(){
+
+    this.shopService.getReviews(this.product.id).subscribe(reviews =>{
+      this.reviews=reviews;
+
+      console.log(this.reviews);
+    }, error => {
+      console.log(error)
+    } )
   }
 }

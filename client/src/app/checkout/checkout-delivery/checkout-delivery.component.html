@@ -1,19 +1,23 @@
 <div class="container">
 <div class="mt-4" [formGroup]="checkoutForm">
-    <h4 class="mb-3">Choose your delivery method</h4>
+    <h1 class="mb-3">Choose your delivery method</h1>
+    <br>
     <div class="row" formGroupName="deliveryForm">
         <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
-            <input type="radio"
+
+            <label for="{{method.id}}" class="container">
+              <input type="radio"
                 id={{method.id}}
                 (click)="setShippingPrice(method)"
                 value={{method.id}}
                 formControlName="deliveryMethod"
-                class="custom-control-input"
+
             >
-            <label for="{{method.id}}" class="custom-control-label">
                 <strong>{{method.shortName}} - {{method.price | currency}}</strong>
                 <br />
-                <span class="label-description">{{method.description}}</span>
+                <span class="checkmark"></span>
+
+
             </label>
         </div>
     </div>
@@ -23,7 +27,7 @@
     <button class="btn btn-outline-primary" cdkStepperPrevious>
         <i class="fa fa-angle-left"></i> Back to address
     </button>
-    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="btn btn-primary" cdkStepperNext>
+    <button [disabled]="checkoutForm.get('deliveryForm').invalid" class="btn btn-success" cdkStepperNext>
         Go to review <i class="fa fa-angle-right"></i>
     </button>
 </div>

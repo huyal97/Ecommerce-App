@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IProduct } from '../shared/models/product';
 import { ShopParams } from '../shared/models/shopParams';
@@ -18,10 +18,12 @@ export class HomeComponent implements OnInit {
   pagination: any = false;
   shopParams = new ShopParams();
   constructor(private shopService:ShopService) { }
+
   ngOnInit(): void {
 
     this.getProducts();
     console.log(this.products);
+
   }
   onSwiper(swiper) {
     console.log(swiper);

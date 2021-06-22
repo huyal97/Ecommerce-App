@@ -1,13 +1,13 @@
 
-  <p class="mb-20">{{reviews.length}} review for <strong>{{product.name}}</strong></p>
+  <p class="mb-20">{{reviews.length}} review for <strong>{{product.name}}</strong></p><br>
   <ng-container *ngFor="let review of reviews" >
     <div class="ps-review">
-      <div class="ps-review__thumbnail"><img src="assets/images/user/1.jpg" alt=""></div>
+      <div class="ps-review__thumbnail"><img width="150" height="75" src="https://www.traderwave.com/wp-content/uploads/2018/01/Amit-Teli-Round-Profile-Photo-300x300.png" alt=""></div>
       <div class="ps-review__content">
 
         <header>
           <app-star-rating [rating]="review.rating"></app-star-rating>
-          <p>-</p><p>By<a href=""> {{review.userEmail}}</a> - November 25, 2017</p>
+          <p>-</p><p>By<a href=""> {{review.userEmail}}</a> - April 25, 2021</p>
 
         </header>
         <p>{{review.comment}}</p>
@@ -15,7 +15,7 @@
     </div>
     <br>
   </ng-container>
-  <ng-container *ngIf="!isSubmited">
+  <ng-container *ngIf="!isSubmited && (currentUser$ | async) as user" >
   <form class="ps-product__review" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
     <h4>ADD YOUR REVIEW</h4>
     <div class="row">

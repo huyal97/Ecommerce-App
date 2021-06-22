@@ -4,5 +4,6 @@ export class ShopParams {
   sort = 'name';
   pageNumber = 1;
   pageSize = 8;
-  search:string;;
+  search:string;
+  minPrice = 0;
 }

@@ -14,7 +14,6 @@ export class JwtInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = localStorage.getItem('token');
-
     if (token) {
         req = req.clone({
         setHeaders: {
@@ -22,7 +21,6 @@ export class JwtInterceptor implements HttpInterceptor {
         }
       })
     }
-
     return next.handle(req);
   }
 }
