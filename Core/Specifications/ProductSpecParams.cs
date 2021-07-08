@@ -16,6 +16,7 @@ namespace Core.Specifications
         public int? TypeId { get; set; }
         public string Sort { get; set; }
         private string _search;
+        public int? MinPrice { get; set; }
         public string Search 
         { 
             get => _search;

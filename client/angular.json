@@ -148,7 +148,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/dashboard",
+            "baseHref": "/",
             "deployUrl": "/dashboard/",
             "outputPath": "../API/wwwroot/dashboard",
             "index": "projects/dashboard/src/index.html",

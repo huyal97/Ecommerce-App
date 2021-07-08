@@ -43,6 +43,19 @@ export class NavBarComponent implements OnInit {
   logout() {
     this.accountService.logout();
   }
-
+  navigateToCategories(){
+    console.log("basildi");
+    this.router.navigate(['categories'])
+  .then(() => {
+    window.location.reload();
+  });
+  }
+  navigateToHome(){
+    console.log("basildi");
+    this.router.navigate([''])
+  .then(() => {
+    window.location.reload();
+  });
+  }
 
 }

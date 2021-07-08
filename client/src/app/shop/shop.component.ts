@@ -5,6 +5,7 @@ import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
 import { IType } from '../shared/models/productType';
 import { ShopParams } from '../shared/models/shopParams';
+import { ExternalScriptService } from '../shared/services/external-script.service';
 import { SearchBarService } from '../shared/services/search-bar.service';
 import { ShopService } from './shop.service';
 
@@ -21,17 +22,24 @@ export class ShopComponent implements OnInit {
   totalCount: Number;
   shopParams = new ShopParams();
   checkbox: any;
+  loadAPI: Promise<any>;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
     {name: 'Price: Low to high', value: 'priceAsc'},
     {name: 'Price: High to low', value: 'priceDesc'},
   ]
 
-  constructor(private shopService: ShopService,private route: ActivatedRoute) {
+  constructor(private shopService: ShopService,private route: ActivatedRoute,
+    private scriptService : ExternalScriptService) {
 
   };
 
   ngOnInit(): void {
+
+    this.loadAPI = new Promise((resolve) => {
+      this.scriptService.loadAllUrl();
+      resolve(true);
+  });
 
     this.route.queryParams.subscribe(queryparams =>{
       this.shopParams.search = queryparams['search'];

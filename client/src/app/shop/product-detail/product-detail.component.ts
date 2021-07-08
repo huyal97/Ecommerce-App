@@ -2,9 +2,12 @@ import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject } from 'rxjs';
+import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IProduct } from 'src/app/shared/models/product';
 import { IReview } from 'src/app/shared/models/review';
+import { IUser } from 'src/app/shared/models/user';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ShopService } from '../shop.service';
 
@@ -18,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
   product : IProduct;
   reviews : IReview[];
   rating :number;
+
   constructor(private shopService : ShopService,private activatedRoute : ActivatedRoute,private basketService: BasketService,
     private toastr: ToastrService) { }
 

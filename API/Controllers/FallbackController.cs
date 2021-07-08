@@ -13,9 +13,6 @@ namespace API.Controllers
         //{
         //    return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/ecommerce","index.html"),"text/HTML");
         //}
-        public IActionResult Index()
-        {
-            return PhysicalFile(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/dashboard", "index.html"), "text/HTML");
-        }
+        
     }
 }

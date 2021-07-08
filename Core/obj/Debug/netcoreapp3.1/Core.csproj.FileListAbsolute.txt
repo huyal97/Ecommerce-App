@@ -1,9 +1,0 @@
-C:\Users\hyalc\Desktop\Ecommerce\Core\bin\Debug\netcoreapp3.1\Core.deps.json
-C:\Users\hyalc\Desktop\Ecommerce\Core\bin\Debug\netcoreapp3.1\Core.dll
-C:\Users\hyalc\Desktop\Ecommerce\Core\bin\Debug\netcoreapp3.1\Core.pdb
-C:\Users\hyalc\Desktop\Ecommerce\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
-C:\Users\hyalc\Desktop\Ecommerce\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
-C:\Users\hyalc\Desktop\Ecommerce\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
-C:\Users\hyalc\Desktop\Ecommerce\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
-C:\Users\hyalc\Desktop\Ecommerce\Core\obj\Debug\netcoreapp3.1\Core.dll
-C:\Users\hyalc\Desktop\Ecommerce\Core\obj\Debug\netcoreapp3.1\Core.pdb

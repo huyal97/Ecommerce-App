@@ -5,9 +5,9 @@ import { OrdersComponent } from './orders/orders.component';
 
 
 const routes: Routes = [
-  {path:'',component:HomeComponent, pathMatch:'full' },
-  {path:'products', loadChildren: () => import('./products/products.module').then(m=> m.ProductsModule)},
-  {path:'orders',component:OrdersComponent, pathMatch:'full' },
+  {path:'dashboard',component:HomeComponent, pathMatch:'full' },
+  {path:'dashboard/products', loadChildren: () => import('./products/products.module').then(m=> m.ProductsModule)},
+  {path:'dashboard/orders',component:OrdersComponent, pathMatch:'full' },
 
 
 ];
